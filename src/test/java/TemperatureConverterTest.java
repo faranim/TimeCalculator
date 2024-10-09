@@ -1,5 +1,3 @@
-
-import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -30,12 +28,16 @@ public class TemperatureConverterTest {
     }
 
     @Test
-    public void testKelvinToCel() {
-        assertEquals(0.0, converter.kelvinToCel(273.15F), 0.001);
+    public void testKelvinToFah() {
+        assertEquals(32.0, converter.kelvinToFah(273.15), 0.01);
+        assertEquals(212.0, converter.kelvinToFah(373.15), 0.01);
+        assertEquals(-40.0, converter.kelvinToFah(233.15), 0.01);
     }
 
     @Test
-    public void testkelvinToFah() {
-        assertEquals(32, converter.kelvinToFah(273.15F), 0.001);
+    public void testKelvinToCel() {
+        assertEquals(0.0, converter.kelvinToCel(273.15), 0.01);
+        assertEquals(100.0, converter.kelvinToCel(373.15), 0.01);
+        assertEquals(-40.0, converter.kelvinToCel(233.15), 0.01);
     }
 }
